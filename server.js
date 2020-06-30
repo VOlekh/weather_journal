@@ -3,7 +3,7 @@ projectData = {};
 
 // Require Express to run server and routes
 //The project file server.js should require express()
-const express = reqyuire ('express');
+const express = require ('express');
 
 // Start up an instance of app
 //The project file server.js should create an instance of their app using express.
@@ -51,6 +51,11 @@ function sendData (request, response) {
 };
 
 // Post method Route
-app.post('/', function (req, res) {
+app.post('/', function (request, response) {
     res.send('POST received')
-  })
+  });
+//Add a POST route for adding a weather via the path ’/weather’ to an array named data. Create the array as well.
+const data = [];
+app.post('/weather', function(request, response){
+    data.push(request.body);
+});
