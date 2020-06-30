@@ -21,21 +21,36 @@ app.use(bodyParser.json());
 // Cors for cross origin allowance
 //The instance of the app should be setup to use cors()
 const cors = require('cors');
+app.use(cors());
 
 //NOT AS IT IS NOW The Express app instance should be pointed to the project folder with .html, .css, and .js files.
 // Initialize the main project folder
 app.use(express.static('website'));
 
 
-
-
-
 // Spin up the server
+//Local server should be running and producing feedback to the Command Line
+
+const port = 8000;
+const server = app.listen(port, listening);
+function listening() {
+console.log ("server running");
+console.log(`running on localhost: ${port}`)
+}
+// After that test your server by typing in terminal node starter.js
+
 
 // Callback to debug
 
 // Initialize all route with a callback function
-
 // Callback function to complete GET '/all'
+app.get('/all', sendData);
 
-// Post Route
+function sendData (request, response) {
+  response.send(projectData);
+};
+
+// Post method Route
+app.post('/', function (req, res) {
+    res.send('POST received')
+  })
