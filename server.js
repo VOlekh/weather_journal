@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+// projectData = {};
 
 // Require Express to run server and routes
 //The project file server.js should require express()
@@ -42,20 +42,21 @@ console.log(`running on localhost: ${port}`)
 
 // Callback to debug
 
-// Initialize all route with a callback function
-// Callback function to complete GET '/all'
-app.get('/all', sendData);
-
-function sendData (request, response) {
-  response.send(projectData);
-};
 
 // Post method Route
-app.post('/', function (request, response) {
-    res.send('POST received')
-  });
+// app.post('/', function (request, response) {
+//     res.send('POST received')
+//   });
 //Add a POST route for adding a weather via the path ’/weather’ to an array named data. Create the array as well.
 const data = [];
 app.post('/weather', function(request, response){
     data.push(request.body);
 });
+
+// Initialize all route with a callback function
+// Callback function to complete GET '/all'
+app.get('/all', sendData);
+
+function sendData (request, response) {
+  response.send(data);
+};
