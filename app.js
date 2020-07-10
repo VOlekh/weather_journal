@@ -7,7 +7,6 @@ let apiKey = "26a266564be9e4c420e48fc2a76ce2ec";
 
 // Create a new date instance dynamically with JS
 
-
 // Event listener to add function to existing HTML DOM element
 document.getElementById("generate").addEventListener("click", performAction);
 
@@ -19,43 +18,19 @@ async function performAction(e) {
   /* Function to GET Web API Data*/
   const data = await getData(baseURL, newZip, countryCode, apiKey);
 
-    console.log(data);
+  console.log(data);
 
-    const temp = data['main']['temp']
-    let d = new Date();
-    let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
-    const feelings = document.getElementById("feelings").value;
+  const temp = data["main"]["temp"];
+  let d = new Date();
+  let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
+  const feelings = document.getElementById("feelings").value;
 
-
-    await postData("http://localhost:8000/weather", {
-        temperature: temp,
-        date: newDate,
-        feelings: feelings,
-        });
-    await updateUI();
- 
-
-  // // put data to dictionry
-  // newData = {'data': data}
-
-  // // send dictionary to server
-  // postData('/weather', newData)
-
-  // // get all data from server, call function
-  // allData = retrieveData('/all')
-
-  // // put allData onto page
-  // updateUI(data)
-
-  // // Get temperature and city from API response and send it to my server
-  // //Getting user responses from the website
-  // const zip = zipText.value;
-  // const feelings = feelingsText.value;
-
-  // //Calling get Data function to get data
-
-  // //Send the data to the server
-  // data = await postData('/newData', dataset);
+  await postData("http://localhost:8000/weather", {
+    temperature: temp,
+    date: newDate,
+    feelings: feelings,
+  });
+  await updateUI();
 }
 //Function to get Data from the server
 const getData = async (baseURL, newZip, countryCode, apiKey) => {
@@ -107,7 +82,7 @@ const updateUI = async () => {
     const allData = await request.json();
     console.log(allData);
     document.getElementById("date").innerHTML = allData[0].date;
-    document.getElementById("temp").innerHTML= allData[0].temperature;
+    document.getElementById("temp").innerHTML = allData[0].temperature;
     document.getElementById("content").innerHTML = allData[0].feelings;
   } catch (error) {
     console.log("error", error);
