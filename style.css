@@ -1,30 +1,39 @@
 body{
     background: #fffff8;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    text-align: left;
+    margin: 0;
+    height:auto;
 }
 
 #app{
     display: grid;
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
-    height:100vh;
+    height:auto;
     background: #f23557;
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
     font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-    
+    font-family: 'Oswald', sans-serif;   
 }
 
 .holder{
-display: flex;
-flex-direction: column;
-width:100%;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+
 }
 
 .entry{
     background: rgba(59, 74, 107, .4);
+    font-size: 20px;
+    height:auto;
+    padding-left: 10px;
+}
+.title{
+    font-size: 25px;
 }
 
 #entryHolder{
@@ -43,32 +52,75 @@ width:100%;
 
 }
 
+#generate {
+    color: #f0d43a;
+    margin-top: 2vh;
+    width: 100%;
+}
+
+#generate:hover {
+    background-color: #f0d43a;
+    color: #AC4361;
+}
+
 .headline {
-    font-size: 90px;
-    padding: 0.5 em;
-  
+    color: #f0d43a;
 
 }
-.holder_headline{
+#header{
+    background-image: url("../img/banner.png");
+}
+
+.holder headline{
   /* pictures from  https://www.freepng.ru/png-4pwdga/download.html*/
-  width: 100%;
-  height: 50vh;
-  background-color: #3b4a6b;
- /* background-image: url("../img/banner.png");*/
-  background-size: cover;
-  background-position: center;
-  background-position: no-repeat;
-  padding: 10px;
+    width: 100%;
+    height: 50vh;
+    background-color: #3b4a6b;
+   
+    /*background-size: cover;*/
+    background-position: center;
+    background-position: no-repeat;
+    padding: 20px;
+    font-size: 90px;
 }
-.holder_zip{
- padding: 10px;
- margin-top: 2vh;
- width: 90%;
+.holder zip{
+    padding: 10px;
+    margin-top: 2vh;
+    width: 90%;
 }
 
-.title{
+.zip {
+    width: 100%;
+    margin-top: 2vh;
+
+
+}
+
+#zip {
+    margin-top: 2vh;
+    width: 99%;
+    font-style: italic;
+    padding-left: 10px;
+}
+
+.feel {
+    margin-top: 5vh;   
+}
+
+#feelings {
+    font-style: italic;
+    padding-left: 10px;
+}
+
+.headline {
+    text-align: center;
+    font-size: 2em;
+    padding: 0.5em;
+    background-color: #3C4B6A;
+}
+
+.title {
     
-
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */

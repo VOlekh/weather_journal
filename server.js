@@ -50,7 +50,10 @@ console.log(`running on localhost: ${port}`)
 //Add a POST route for adding a weather via the path ’/weather’ to an array named data. Create the array as well.
 const data = [];
 app.post('/weather', function(request, response){
+    console.log(request.body)
     data.push(request.body);
+
+    response.send('POST received');
 });
 
 // Initialize all route with a callback function
