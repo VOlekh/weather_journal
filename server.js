@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-// projectData = {};
+projectData = {};
 
 // Require Express to run server and routes
 //The project file server.js should require express()
@@ -51,7 +51,7 @@ console.log(`running on localhost: ${port}`)
 const data = [];
 app.post('/weather', function(request, response){
     console.log(request.body)
-    data.push(request.body);
+    projectData=request.body;
 
     response.send('POST received');
 });
@@ -61,5 +61,5 @@ app.post('/weather', function(request, response){
 app.get('/all', sendData);
 
 function sendData (request, response) {
-  response.send(data);
+  response.send(projectData);
 };
