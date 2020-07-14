@@ -107,7 +107,7 @@ body {
     width: 110%;
     height: 50vh;
     /*https://www.nastol.com.ua/download/179730/2560x1440/*/
-    background-image: url("../weather_journal/img/banner.jpg");
+    background-image: url("../img/banner.jpg");
     background-size: cover;
     background-position: left;
     background-position: no-repeat;
