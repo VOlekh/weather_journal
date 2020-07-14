@@ -3,7 +3,7 @@
 let baseURL = "http://api.openweathermap.org/data/2.5/weather?";
 
 // Personal API Key for OpenWeatherMap API
-let apiKey = "26a266564be9e4c420e48fc2a76ce2ec";
+let apiKey = "26a266564be9e4c420e48fc2a76ce2ec&units=imperial";
 
 // Create a new date instance dynamically with JS
 
